@@ -1,0 +1,31 @@
+Scoring, term weighting and the
+vector space model
+Thus far we have dealt with indexes that support Boolean queries: a document
+eithermatches or does notmatch a query. In the case of large document
+collections, the resulting number of matching documents can far exceed the
+number a human user could possibly sift through. Accordingly, it is essential
+for a search engine to rank-order the documents matching a query. To do
+this, the search engine computes, for each matching document, a score with
+respect to the query at hand. In this chapterwe initiate the study of assigning
+a score to a (query, document) pair. This chapter consists of threemain ideas.
+1. We introduce parametric and zone indexes in Section 6.1, which serve
+two purposes. First, they allow us to index and retrieve documents by
+metadata such as the language in which a document is written. Second,
+they give us a simple means for scoring (and thereby ranking) documents
+in response to a query.
+2. Next, in Section 6.2 we develop the idea of weighting the importance of a
+term in a document, based on the statistics of occurrence of the term.
+3. In Section 6.3 we show that by viewing each document as a vector of such
+weights, we can compute a score between a query and each document.
+This view is known as vector space scoring.
+Section 6.4 develops several variants of term-weighting for the vector space
+model. Chapter 7 develops computational aspects of vector space scoring,
+and related topics.
+As we develop these ideas, the notion of a query will assume multiple
+nuances. In Section 6.1 we consider queries in which specific query terms
+occur in specified regions of a matching document. Beginning Section 6.2 we
+will in fact relax the requirement of matching specific regions of a document;
+instead,wewill look at so-called free text queries that simply consist of query
+terms with no specification on their relative order, importance or where in a
+document they should be found. The bulk of our study of scoring will be in
+this latter notion of a query being such a set of terms.

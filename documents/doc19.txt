@@ -1,0 +1,29 @@
+Web search basics
+In this and the following two chapters, we consider web search engines. Sections
+19.1–19.4 provide some background and history to help the reader appreciate
+the forces that conspire to make the Web chaotic, fast-changing and
+(from the standpoint of information retrieval) very different from the “traditional”
+collections studied thus far in this book. Sections 19.5–19.6 deal with
+estimating the number of documents indexed byweb search engines, and the
+elimination of duplicate documents in web indexes, respectively. These two
+latter sections serve as background material for the following two chapters.
+19.1 Background and history
+The Web is unprecedented in many ways: unprecedented in scale, unprecedented
+in the almost-complete lack of coordination in its creation, and unprecedented
+in the diversity of backgrounds and motives of its participants.
+Each of these contributes to making web search different – and generally far
+harder – than searching “traditional” documents.
+The invention of hypertext, envisioned by Vannevar Bush in the 1940’s and
+first realized in working systems in the 1970’s, significantly precedes the formation
+of theWorldWideWeb (which we will simply refer to as theWeb), in
+the 1990’s. Web usage has shown tremendous growth to the point where it
+now claims a good fraction of humanity as participants, by relying on a simple,
+open client-server design: (1) the server communicates with the client
+via a protocol (the http or hypertext transfer protocol) HTTP that is lightweight and
+simple, asynchronously carrying a variety of payloads (text, images and –
+over time – richer media such as audio and video files) encoded in a simHTML
+ple markup language called HTML (for hypertext markup language); (2) the
+client – generally a browser, an application within a graphical user environment
+– can ignore what it does not understand. Each of these seemingly
+innocuous features has contributed enormously to the growth of theWeb, so
+it is worthwhile to examine them further.

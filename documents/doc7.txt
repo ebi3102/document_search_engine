@@ -1,0 +1,28 @@
+Computing scores in a complete
+search system
+Chapter 6 developed the theory underlying term weighting in documents
+for the purposes of scoring, leading up to vector space models and the basic
+cosine scoring algorithm of Section 6.3.3 (page 124). In this chapter we begin
+in Section 7.1 with heuristics for speeding up this computation; many of
+these heuristics achieve their speed at the risk of not finding quite the top K
+documents matching the query. Some of these heuristics generalize beyond
+cosine scoring. With Section 7.1 in place, we have essentially all the components
+needed for a complete search engine. We therefore take a step back
+from cosine scoring, to the more general problem of computing scores in a
+search engine. In Section 7.2 we outline a complete search engine, including
+indexes and structures to support not only cosine scoring but also more
+general ranking factors such as query term proximity. We describe how all
+of the various pieces fit together in Section 7.2.4. We conclude this chapter
+with Section 7.3, where we discuss how the vector space model for free text
+queries interacts with common query operators.
+7.1 Efficient scoring and ranking
+We begin by recapping the algorithm of Figure 6.14. For a query such as q =
+jealous gossip, two observations are immediate:
+1. The unit vector ~v(q) has only two non-zero components.
+2. In the absence of any weighting for query terms, these non-zero components
+are equal – in this case, both equal 0.707.
+For the purpose of ranking the documents matching this query, we are
+really interested in the relative (rather than absolute) scores of the documents
+in the collection. To this end, it suffices to compute the cosine similarity from
+each document unit vector ~v(d) to ~V (q) (in which all non-zero components
+of the query vector are set to 1), rather than to the unit vector ~v(q). For any

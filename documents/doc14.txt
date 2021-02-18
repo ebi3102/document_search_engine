@@ -1,0 +1,32 @@
+Vector space classification
+The document representation in Naive Bayes is a sequence of terms or a binary
+vector he1, . . . , e|V|i ∈ {0, 1}|V|. In this chapter we adopt a different
+representation for text classification, the vector space model, developed in
+Chapter 6. It represents each document as a vectorwith one real-valued component,
+usually a tf-idf weight, for each term. Thus, the document space X,
+the domain of the classification function γ, is R|V|. This chapter introduces a
+number of classification methods that operate on real-valued vectors.
+The basic hypothesis in using the vector space model for classification is
+the contiguity CONTIGUITY hypothesis.
+HYPOTHESIS
+Contiguity hypothesis. Documents in the same class form a contiguous
+region and regions of different classes do not overlap.
+There aremany classification tasks, in particular the type of text classification
+that we encountered in Chapter 13, where classes can be distinguished by
+word patterns. For example, documents in the class China tend to have high
+values on dimensions like Chinese, Beijing, and Maowhereas documents in the
+class UK tend to have high values for London, British and Queen. Documents
+of the two classes therefore form distinct contiguous regions as shown in
+Figure 14.1 and we can drawboundaries that separate themand classify new
+documents. How exactly this is done is the topic of this chapter.
+Whether or not a set of documents is mapped into a contiguous region depends
+on the particular choices we make for the document representation:
+type of weighting, stop list etc. To see that the document representation is
+crucial, consider the two classes written by a group vs. written by a single person.
+Frequent occurrence of the first person pronoun I is evidence for the
+single-person class. But that information is likely deleted fromthe document
+representation if we use a stop list. If the document representation chosen
+is unfavorable, the contiguity hypothesis will not hold and successful vector
+space classification is not possible.
+The same considerations that led us to prefer weighted representations, in
+particular length-normalized tf-idf representations, in Chapters 6 and 7 also

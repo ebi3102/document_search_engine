@@ -1,0 +1,29 @@
+Language models for information
+retrieval
+A common suggestion to users for coming up with good queries is to think
+of words that would likely appear in a relevant document, and to use those
+words as the query. The language modeling approach to IR directly models
+that idea: a document is a good match to a query if the document model
+is likely to generate the query, which will in turn happen if the document
+contains the query words often. This approach thus provides a different realization
+of some of the basic ideas for document rankingwhich we sawin Section
+6.2 (page 117). Instead of overtly modeling the probability P(R = 1|q, d)
+of relevance of a document d to a query q, as in the traditional probabilistic
+approach to IR (Chapter 11), the basic language modeling approach instead
+builds a probabilistic language model Md from each document d, and
+ranks documents based on the probability of themodel generating the query:
+P(q|Md).
+In this chapter, we first introduce the concept of language models (Section
+12.1) and then describe the basic and most commonly used language
+modeling approach to IR, the Query Likelihood Model (Section 12.2). After
+some comparisons between the language modeling approach and other
+approaches to IR (Section 12.3), we finish by briefly describing various extensions
+to the language modeling approach (Section 12.4).
+12.1 Language models
+12.1.1 Finite automata and language models
+What do we mean by a document model generating a query? A traditional
+generative model of a language, of the kind familiar GENERATIVE MODEL from formal language
+theory, can be used either to recognize or to generate strings. For example,
+the finite automaton shown in Figure 12.1 can generate strings that include
+the examples shown. The full set of strings that can be generated is called
+the language of the automaton

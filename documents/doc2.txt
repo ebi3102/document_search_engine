@@ -1,0 +1,26 @@
+The term vocabulary and postings
+lists
+Recall the major steps in inverted index construction:
+1. Collect the documents to be indexed.
+2. Tokenize the text.
+3. Do linguistic preprocessing of tokens.
+4. Index the documents that each term occurs in.
+In this chapter we first briefly mention how the basic unit of a document can
+be defined and how the character sequence that it comprises is determined
+(Section 2.1). We then examine in detail some of the substantive linguistic
+issues of tokenization and linguistic preprocessing, which determine the
+vocabulary of terms which a system uses (Section 2.2). Tokenization is the
+process of chopping character streams into tokens, while linguistic preprocessing
+then deals with building equivalence classes of tokens which are the
+set of terms that are indexed. Indexing itself is covered in Chapters 1 and 4.
+Then we return to the implementation of postings lists. In Section 2.3, we
+examine an extended postings list data structure that supports faster querying,
+while Section 2.4 covers building postings data structures suitable for
+handling phrase and proximity queries, of the sort that commonly appear in
+both extended Boolean models and on the web.
+2.1 Document delineation and character sequence decoding
+2.1.1 Obtaining the character sequence in a document
+Digital documents that are the input to an indexing process are typically
+bytes in a file or on a web server. The first step of processing is to convert this
+byte sequence into a linear sequence of characters. For the case of plain English
+text in ASCII encoding, this is trivial. But often things get much more

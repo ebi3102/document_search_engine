@@ -1,0 +1,29 @@
+Matrix decompositions and latent
+semantic indexing
+On page 123 we introduced the notion of a term-document matrix: an M × N
+matrix C, each of whose rows represents a term and each of whose columns
+represents a document in the collection. Even for a collection of modest size,
+the term-document matrix C is likely to have several tens of thousands of
+rows and columns. In Section 18.1.1 we first develop a class of operations
+from linear algebra, known as matrix decomposition. In Section 18.2 we use a
+special form of matrix decomposition to construct a low-rank approximation
+to the term-document matrix. In Section 18.3 we examine the application
+of such low-rank approximations to indexing and retrieving documents, a
+technique referred to as latent semantic indexing. While latent semantic indexing
+has not been established as a significant force in scoring and ranking
+for information retrieval, it remains an intriguing approach to clustering in a
+number of domains including for collections of text documents (Section 16.6,
+page 372). Understanding its full potential remains an area of active research.
+Readers who do not require a refresher on linear algebra may skip Section
+18.1, although Example 18.1 is especially recommended as it highlights
+a property of eigenvalues that we exploit later in the chapter.
+18.1 Linear algebra review
+We briefly review some necessary background in linear algebra. Let C be
+an M × N matrix with real-valued entries; for a term-document matrix, all
+entries are in fact non-negative. The rank of amatrix is RANK the number of linearly
+independent rows (or columns) in it; thus, rank(C) ≤ min{M, N}. A square
+r × r matrix all of whose off-diagonal entries are zero is called a diagonal
+matrix; its rank is equal to the number of non-zero diagonal entries. If all
+r diagonal entries of such a diagonal matrix are 1, it is called the identity
+matrix of dimension r and represented by Ir.
+For a square M× M matrix C and a vector ~x that is not all zeros, the values

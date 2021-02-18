@@ -1,0 +1,26 @@
+Web crawling and indexes
+20.1 Overview
+Web crawling is the process by which we gather pages from the Web, in
+order to index them and support a search engine. The objective of crawling
+is to quickly and efficiently gather as many useful web pages as possible,
+together with the link structure that interconnects them. In Chapter 19 we
+studied the complexities of theWeb stemming fromits creation bymillions of
+uncoordinated individuals. In this chapter we study the resulting difficulties
+for crawling the Web. The focus of this chapter is the component shown in
+Figure 19.7 as web crawler; it is sometimes WEB CRAWLER referred to as a spider.
+SPIDER The goal of this chapter is not to describe how to build the crawler for
+a full-scale commercial web search engine. We focus instead on a range of
+issues that are generic to crawling from the student project scale to substantial
+research projects. We begin (Section 20.1.1) by listing desiderata for web
+crawlers, and then discuss in Section 20.2 how each of these issues is addressed.
+The remainder of this chapter describes the architecture and some
+implementation details for a distributed web crawler that satisfies these features.
+Section 20.3 discusses distributing indexes across many machines for
+a web-scale implementation.
+20.1.1 Features a crawler must provide
+We list the desiderata for web crawlers in two categories: features that web
+crawlers must provide, followed by features they should provide.
+Robustness: TheWeb contains servers that create spider traps,which are generators
+of web pages that mislead crawlers into getting stuck fetching an
+infinite number of pages in a particular domain. Crawlers must be designed
+to be resilient to such traps. Not all such traps are malicious;

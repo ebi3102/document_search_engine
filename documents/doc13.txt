@@ -1,0 +1,31 @@
+Thus far, this book has mainly discussed the process of ad hoc retrieval, where
+users have transient information needs that they try to address by posing
+one or more queries to a search engine. However, many users have ongoing
+information needs. For example, you might need to track developments in
+multicore computer chips. One way of doing this is to issue the query multicore
+AND computer AND chip against an index of recent newswire articles each
+morning. In this and the following two chapters we examine the question:
+How can this repetitive task be automated? To this end, many systems support
+standing queries. A standing query is like any other STANDING QUERY query except that it
+is periodically executed on a collection to which new documents are incrementally
+added over time.
+If your standing query is just multicore AND computer AND chip, you will tend
+to miss many relevant new articles which use other terms such as multicore
+processors. To achieve good recall, standing queries thus have to be refined
+over time and can gradually become quite complex. In this example, using a
+Boolean search engine with stemming, you might end up with a query like
+(multicore OR multi-core) AND (chip OR processor OR microprocessor).
+To capture the generality and scope of the problem space to which standCLASSIFICATION
+ing queries belong, we now introduce the general notion of a classification
+problem. Given a set of classes, we seek to determine which class(es) a given
+object belongs to. In the example, the standing query serves to divide new
+newswire articles into the two classes: documents about multicore computer chips
+and documents not about multicore computer chips. We refer to this as two-class
+ROUTING classification. Classification using standing queries is also called routing or
+FILTERING filteringand will be discussed further in Section 15.3.1 (page 335).
+A class need not be as narrowly focused as the standing query multicore
+computer chips. Often, a class is amore general subject area like China or coffee.
+Such more general classes are usually referred to as topics, and the classificaTEXT
+CLASSIFICATION tion task is then called text classification, text categorization, topic classification,
+or topic spotting. An example for China appears in Figure 13.1. Standing
+queries and topics differ in their degree of specificity, but the methods for
