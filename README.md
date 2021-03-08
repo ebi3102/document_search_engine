@@ -9,6 +9,6 @@ Requierments:
     tkinter library
    
    
-after download the project you can copy your documents into the documents directory and run indexer.py to be create inverted index file an terms idf file
-by runing the search.py a window is open that you can write your query and see the results which are the name of documents that have your query and the cosine similarity number that represnt the similarity between that document an query.
+after download the project you can copy your documents into the documents directory and run indexer.py to be create inverted index file and terms idf file
+by runing the search.py a window is open that you can write your query and see the results which are the name of documents that have your query and the cosine similarity number that represnt the similarity between that document and your query.
 for using the search enging without any UI you can run processor.py and use the search engin function
